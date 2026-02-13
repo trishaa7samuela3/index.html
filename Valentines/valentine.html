@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Valentine</title>
+
+<style>
+body {
+  text-align: center;
+  font-family: Arial;
+  background: #ffe6f0;
+  padding-top: 100px;
+}
+
+button {
+  font-size: 20px;
+  padding: 15px 30px;
+  margin: 15px;
+  border-radius: 10px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+}
+
+.gift {
+  display:block;
+  margin:20px auto;
+  width:220px;
+  padding:15px;
+  background:#ff4d6d;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+}
+</style>
+
+</head>
+<body>
+
+<div id="page1">
+<h1>Will you be my Valentine? ❤️</h1>
+<button onclick="yesClicked()">YES 💖</button>
+<button id="noBtn">NO 😢</button>
+</div>
+
+<div id="page2" style="display:none;">
+<h1>YAAAAYYY!!! 🎉💖</h1>
+<button onclick="showGifts()">Continue 💝</button>
+</div>
+
+<div id="page3" style="display:none;">
+<h1>Here are two gifts 🎁</h1>
+
+<a class="gift" href="https://open.spotify.com/" target="_blank">
+🎵 Gift 1: A Song
+</a>
+
+<a class="gift" href="#" onclick="showLetter()">
+💌 Gift 2: Love Letter
+</a>
+</div>
+
+<div id="page4" style="display:none; padding:20px;">
+<h1>For You ❤️</h1>
+<p style="max-width:500px;margin:auto;font-size:18px;">
+My love,<br><br>
+You make my world brighter and my heart lighter.
+Every day with you feels special.<br><br>
+Happy Valentine's Day ❤️
+</p>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", () => {
+  const x = Math.random() * window.innerWidth - 100;
+  const y = Math.random() * window.innerHeight - 50;
+  noBtn.style.position = "absolute";
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
+
+function yesClicked() {
+  document.getElementById("page1").style.display="none";
+  document.getElementById("page2").style.display="block";
+}
+
+function showGifts() {
+  document.getElementById("page2").style.display="none";
+  document.getElementById("page3").style.display="block";
+}
+
+function showLetter() {
+  document.getElementById("page3").style.display="none";
+  document.getElementById("page4").style.display="block";
+}
+</script>
+
+</body>
+</html>
